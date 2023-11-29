@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beverage Recommendation</title>
+    <style>
+        body {
+            background-color: #DEB887;
+            font-family: 'Arial', sans-serif;
+            color: #495057;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #800000;
+        }
+
+        form {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            background-color: #ffffff; /* Set background color for the form */
+            padding: 20px; /* Add padding to the form */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #495057; /* Set color for the questions */
+        }
+
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+        }
+        /* Added styles for the recommendation result */
+        .recommendation-box {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .recommendation-text {
+            font-family: 'Arial', sans-serif;
+            color: #495057;
+            font-size: 16px;
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <h1>Beverage Recommendation</h1>
+    <form action="/recommend" method="post">
+        <label for="q1">Question 1: How do you approach challenges?</label><br>
+        <input type="radio" name="q1" value="Tea">I prefer a calm and introspective approach<br>
+        <input type="radio" name="q1" value="Coffee">I'm energetic and proactive<br>
+        <input type="radio" name="q1" value="Wine">I appreciate a sophisticated and refined approach<br>
+        <input type="radio" name="q1" value="Whiskey">I have a bit of mystery and depth<br>
+        <input type="radio" name="q1" value="Beer">I'm easygoing and social<br>
+
+        <label for="q2">Question 2: How do you spend your leisure time?</label><br>
+        <input type="radio" name="q2" value="Tea">I enjoy calm and introspective activities<br>
+        <input type="radio" name="q2" value="Coffee">I'm always seeking new challenges<br>
+        <input type="radio" name="q2" value="Wine">I appreciate cultural and refined experiences<br>
+        <input type="radio" name="q2" value="Whiskey">I enjoy activities with a bit of mystery<br>
+        <input type="radio" name="q2" value="Beer">I like casual and social gatherings<br>
+
+        <label for="q3">Question 3: What type of conversations do you enjoy?</label><br>
+        <input type="radio" name="q3" value="Tea">I enjoy deep and introspective conversations<br>
+        <input type="radio" name="q3" value="Coffee">I prefer discussions about challenges and goals<br>
+        <input type="radio" name="q3" value="Wine">I enjoy intellectual and refined conversations<br>
+        <input type="radio" name="q3" value="Whiskey">I like conversations with a bit of mystery<br>
+        <input type="radio" name="q3" value="Beer">I enjoy light-hearted and social conversations<br>
+
+        <label for="q4">Question 4: What is your preferred aesthetic?</label><br>
+        <input type="radio" name="q4" value="Tea">I appreciate simple and calming aesthetics<br>
+        <input type="radio" name="q4" value="Coffee">I like dynamic and energetic aesthetics<br>
+        <input type="radio" name="q4" value="Wine">I prefer sophisticated and refined aesthetics<br>
+        <input type="radio" name="q4" value="Whiskey">I appreciate authentic and unconventional aesthetics<br>
+        <input type="radio" name="q4" value="Beer">I enjoy casual and easygoing aesthetics<br>
+
+        <label for="q5">Question 5: How do you approach social situations?</label><br>
+        <input type="radio" name="q5" value="Tea">I prefer quiet and intimate gatherings<br>
+        <input type="radio" name="q5" value="Coffee">I enjoy being in the center of social activities<br>
+        <input type="radio" name="q5" value="Wine">I appreciate socializing in refined settings<br>
+        <input type="radio" name="q5" value="Whiskey">I like social situations with a bit of mystery<br>
+        <input type="radio" name="q5" value="Beer">I'm easy to get along with in any social setting<br>
+
+
+
+        <button type="submit">Get Recommendation</button>
+    </form>
+
+    {% if personality1 %}
+    <div class="recommendation-box">
+        <p class="recommendation-text">Your personality type is {{ personality1 }}.</p>
+        <p class="recommendation-text">We recommend you try {{ beverage1 }}.</p>
+    </div>
+
+    {% endif %}
+</body>
+</html>
+
+
