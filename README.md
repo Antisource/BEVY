@@ -19,7 +19,7 @@ To run the Beverage Recommendation Web App locally, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/BEVY.git
+   git clone https://github.com/Antisource/BEVY.git
    ```
 
 2. **Install Dependencies:**
@@ -37,7 +37,7 @@ To run the Beverage Recommendation Web App locally, follow these steps:
 ## Technology Stack
 
 - **Backend:** Flask
-- **Frontend:** HTML, CSS, 
+- **Frontend:** HTML, CSS
 
 ## Usage
 
